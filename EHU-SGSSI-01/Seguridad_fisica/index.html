@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Seguridad física</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Seguridad física</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Seguridad física</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Seguridad física</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Seguridad física</h2>
+        <ul>
+            <li>Introducción</li>
+            <li>Estándares</li>
+            <li>SGSI (PDCA)</li>
+            <li>Amenazas</li>
+            <li>Google Data Center security</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Introducción</h2>
+        <p>Parte de la seguridad de la información que se centra en la protección de los activos físicos, incluidos los data centers, equipos de hardware y otros dispositivos críticos</p>
+        <p>Prevenir accesos no autorizados, daños y robos que puedan comprometer la integridad, disponibilidad y confidencialidad de los datos</p>
+    </section>
+
+    <!-- <section class="slide">
+        <h2>¿Qué es la seguridad física?</h2>
+        Cámara acorazada en la CIA: Acceso por escáner de retina, Acceso con huella dactilar, Acceso con sensor de voz, Sensor de movimiento, Sensor de sonido, Sensor de temperatura, Sensor de presión en el suelo
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la seguridad física?</h2>
+    Sensor de temperatura<br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/k-oVuQpjG3s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </section>  
+
+    <section class="slide">
+        <h2>¿Qué es la seguridad física?</h2>
+    Sensor de presión en el suelo <br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ar0xLps7WSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </section>  
+
+    <section class="slide">
+        <h2>¿Qué es la seguridad física?</h2>
+        <p>El PC tiene un simple password!</p>
+    </section> -->
+
+    <section class="slide">
+        <h2>Introducción</h2>
+        La seguridad física es tan importante como la lógica:<br><br>
+        <ul>
+            <li>Debe ser <u>coherente</u> con el valor de la información a proteger</li>
+            <li>Las medidas de seguridad deben ser <u>equilibradas</u></li>
+            <li>Las medidas de seguridad deben aplicarse también a los <u>servicios</u> que ofrece la empresa</li>
+        </ul>    
+    </section>
+
+    <section class="slide">
+        <h2>Estándares: EN 50600</h2>
+        <p>European Norm for Data Centers: enfoque integral para el diseño, construcción y operación de data centers en Europa</p>
+        <p>Seguridad física, resiliencia, y sostenibilidad de la infraestructura</p>
+    </section>
+
+    <section class="slide">
+        <h2>Estándares: ISO 27001</h2>
+        <p>Estándar internacional para la gestión de la seguridad de la información</p>
+        <p>Controles de acceso físico, protección contra desastres naturales, y procedimientos para el mantenimiento de equipos</p>
+    </section>
+
+    <section class="slide">
+        <h2>Estándares: ISO 27002</h2>
+        <p>Cómo implementar los controles de seguridad definidos en ISO 27001</p>
+        <p>Seguridad de áreas y equipos, controles de acceso físico, y protección contra interrupciones ambientales</p>
+    </section>
+
+    <section class="slide">
+        <h2>Estándares: ISO 27003</h2>
+        <p>Describe los pasos a seguir para diseñar un SGSI</p>
+        <p>Como resultado de su aplicación se obtiene un plan de implementación del SGSI (Sistema de Gestión de Seguridad de la Información)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Estándares: ISO 27004</h2>
+        <p>Evaluar la efectividad de un SGSI que ya esté implementado</p>
+    </section>
+
+    <section class="slide">
+        <h2>Estándares: 27005</h2>
+        <p>Identificación, evaluación y tratamiento de riesgos relacionados con la seguridad de la información</p>
+    </section>
+
+    <section class="slide">
+        <h2>SGSI</h2>
+        Proceso PDCA (Plan-Do-Check-Act): <br>
+        <ol>
+            <li>Planificar</li>
+            <li>Hacer</li>
+            <li>Comprobar</li>
+            <li>Actuar</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Planificar (1)</h2>
+        <p>Análisis pormenorizado de las áreas que componen nuestra organización que nos servirá para establecer una política de recuperación ante un desastre</p>
+        <p>Analisis de riesgos: plan de contingencia
+            <ul>
+                <li>Se identifican las amenazas</li>
+                <li>Se valoran las pérdidas si las amenazas se cumplen</li>
+                <li>Se estima el coste de proteger la información</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Planificar (1)</h2>
+        Plan de contingencia incorpora medidas:
+        <ul>
+            <li>Técnicas</li>
+            <li>Organizativas</li>
+            <li>Humanas</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Medidas Técnicas</h2>
+        Extintores contra incendios<br><br>
+        Detectores de humo<br><br>
+        Salidas de emergencia<br><br>
+        Equipos informáticos de respaldo<br><br>
+        Control de accesos<br><br>
+        ...<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Medidas Organizativas</h2>
+        Seguro de incendios<br><br>
+        Precontrato de alquiler de equipos informáticos y ubicación alternativa<br><br>
+        Procedimiento de backups<br><br>
+        Procedimiento de actuación en caso de incendio<br><br>
+        Contratación de un servicio de auditoría de riesgos laborales<br><br>
+        ...<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Medidas Humanas</h2>
+        Formación para actuar en caso de incendio<br><br>
+        Designación de un responsable de sala<br><br>
+        Asignación de roles y responsabilidades para la copia de seguridad<br><br>
+        ...<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Planificar (1)</h2>
+        Plan de contingencia contiene subplanes:
+        <ul>
+            <li>Respaldo</li>
+            <li>Emergencia</li>
+            <li>Recuperación</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Planificar (1)</h2>
+        Plan de <b>Respaldo</b>:<br><br>
+        <ul>
+            <li>Qué hacer antes de que se produzca la amenaza</li>
+            <li>Finalidad: prevenir la materialización de la amenaza</li>
+            <li>Revisión de extintores, Simulacros de incendio, Realización de copias de seguridad (+ tests de recuperación), ...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Planificar (1)</h2>
+        Plan de <b>Emergencia</b>:<br><br>
+        <ul>
+            <li>Qué hacer mientras se produce la amenaza o justo después</li>
+            <li>Finalidad: paliar los efectos adversos de la materialización de la amenaza</li>
+            <li>Activación del precontrato de alquiler de equipos informáticos, Restauración de las copias de seguridad, ...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Planificar (1)</h2>
+        Plan de <b>Recuperación</b>:<br><br>
+        <ul>
+            <li>Qué hacer una vez controlada la amenaza</li>
+            <li>Finalidad: restaurar las cosas al estado en el que se encontraban antes de la materialización de la amenaza</li>
+            <li>Evaluación de daños, Traslado de datos desde la ubicación de emergencia a la habitual, Desactivación del precontrato de alquiler, Reclamaciones a la compañía de seguros, ...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Planificar (1)</h2>
+        El plan de <b>contingencia</b> no debe limitarse a enumerar una serie de medidas. También debe incluir:
+        <ul>
+            <li>Qué recursos materiales son necesarios</li>
+            <li>Qué personas están implicadas en el cumplimiento del plan</li>
+            <li>Cuáles son las responsabilidades concretas de esas personas y su rol dentro del plan</li>
+            <li>Qué protocolos de actuación deben seguir y cómo son</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Hacer (2)</h2>
+        Se implementan las contramedidas que se hayan estimado oportunas para proteger los bienes<br><br>
+        Contramedidas de varios tipos: atenuar los riesgos, minimizar las pérdidas, asegurar una rápida recuperación<br><br>
+        Fundamental: formación e información al personal afectado
+ 
+    </section>
+
+    <section class="slide">
+        <h2>Comprobar (3)</h2>
+        Revisiones periódicas (Auditorías) <br><br>
+        Especialmente tras la materialización de una amenaza <br><br>
+        Asegura:
+        <ul>
+            <li>La puesta al día frente a nuevas amenazas</li>
+            <li>El correcto funcionamiento del SGSI</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Actuar (4)</h2>
+        Resultado de la comprobación <br><br>
+        Amenaza prevista, contramedidas eficaces: revisar aspectos menores para mejorar la eficiencia<br><br>
+        Amenaza prevista, contramedidas ineficaces: analizar causa de fallo y proponer nuevas contramedidas<br><br>
+        Amenaza no prevista: nuevo análisis de riesgos (Aunque las medidas fuesen eficaces)
+
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas</h2>
+        Ocasionadas por los humanos <br><br>
+        Ocasionadas por desastres naturales <br><br>
+        Alteraciones del entorno <br><br>
+        Acceso a información en soporte físico <br><br>
+    </section>
+
+    <!-- <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        Canal lateral<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        ¿Podría un ciberatacante acceder a sistemas informáticos cerrados y sin tocar directamente los equipos?<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/B05wPomCjEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        La posibilidad de acceder físicamente a un sistema puede hacer que las medidas de seguridad empleadas sean inútiles <br><br>
+        Hay que establecer “áreas seguras” <br><br>
+        A veces no hay ni que acceder físicamente al sistema (Ataque TEMPEST) <br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        Las emanaciones electromagnéticas podrían ser un vector de ataque <br><br>
+        ¿Cómo captar las emanaciones electromagnéticas? Todos los aparatos electrónicos emiten radiaciones y emanaciones en forma de señales electromagnéticas y acústicas. 
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        <p>Dependiendo de diversos factores como la distancia y los obstáculos, se pueden captar las señales de los componentes a través de antenas o micrófonos de alta sensibilidad (en el caso de señales acústicas) y procesarlas para obtener información </p>
+        <p>Entre estos aparatos también se encuentran los <b>monitores</b> y <b>teclados</b>, por lo que estas técnicas pueden ser también empleadas por ciberatacantes</p>
+    </section> -->
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        Las instalaciones de procesamiento de información crítica o sensible deben estar en áreas protegidas con un perímetro de seguridad definido por: 
+        <ul>
+            <li>Vallas</li>
+            <li>Controles de acceso apropiados</li>
+        </ul>
+        La protección debe ser proporcional a los riesgos identificados
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        Control de acceso a un área protegida: personal de seguridad, llaves, tarjetas de acceso, PIN , sistema biométrico, ...
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        Sistemas biométricos: sistemas que identifican a las personas en base a una característica “física”: 
+        <ul>
+            <li>Huella digital</li>
+            <li>Palma de la mano</li>
+            <li>Patrones oculares</li>
+            <li>Reconocimiento facial</li>
+            <li>Verificación de voz</li>
+            <li>Pautas al caminar</li>
+            <li>...</li>
+</ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        Los visitantes de áreas protegidas deben ser supervisados o inspeccionados<br><br>
+        La fecha y hora de sus entradas y salidas debe quedar registrada<br><br>
+        El acceso debe permitirse con propósitos específicos y autorizados<br><br>
+        El visitante debe ser instruido en las medidas de seguridad del área<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+
+        Los accesos deben ser auditados de manera periódica<br><br>
+        La información de los accesos también debe ser protegida<br><br>
+        Es recomendable llevar una identificación visible de manera continua<br><br>
+        Alentar a los empleados a sospechar de personas no identificadas<br><br>
+        Revisar los permisos de manera periódica<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+
+        No todos los empleados tienen porqué saber qué se hace en el área protegida<br><br>
+        Las áreas protegidas desocupadas deben quedar bloqueadas<br><br>
+        No se debe permitir el acceso a cámaras fotográficas, móviles, etc.<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/guille.png" alt="Guillermo" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+        Terremotos, fuego, tormentas eléctricas, inundaciones<br><br>
+        Hay que contemplarlos en la política de seguridad de la empresa<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+        Pérdida de información<br><br>
+        Pérdida de equipamiento<br><br>
+        Tiempo en recuperarse = dinero<br><br>
+        Resiliencia: capacidad de sobreponerse a una situación adversa<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        ¿Qué fue de las empresas que tenían su sede en la Torre Windsor (2005)?<br><br>
+
+        En este edificio de oficinas se ubicaban principalmente empresas como la Consultora Deloitte (ocupando 20 de sus 32 plantas) o el Despacho de Abogados Garrigues
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        Consultora Deloitte:
+        <ul>
+            <li>Bien preparada</li>
+            <li>El lunes siguiente trabajando en condiciones “normales”</li>
+</ul>
+Despacho de abogados Garrigues
+        <ul>
+            <li>Copias de seguridad en otra planta del mismo edificio</li>
+            <li>Perdieron grandes cantidades de información</li>
+        </ul>
+
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+        Consultora Deloitte: <br><br>
+        Copias de seguridad externas de todos sus datos, y toda la información en documento físico tenía su copia en soporte informático<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+        Consultora Deloitte: <br><br>
+        Estos backups se gestionan en localizaciones distintas a las de la propia empresa, cumpliendo así con las normativas de seguridad, con la Ley de Protección de Datos (LOPD) y con la autoprotección de las propias empresas<br><br>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        Según el Disaster Recovery Institute International, el 90% de empresas que experimentan pérdidas significativas de datos, quiebran en un plazo de 3 años <br><br>
+Las medidas de contingencia ante desastres, la salvaguarda de datos, es una tarea imprescindible para que una empresa tenga continuidad en el desarrollo de su negocio
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        Según un estudio de la Universidad de Texas, sólo el 6% de empresas con pérdida catastrófica de datos sobrevivirá, frente a un 43% que nunca reabrirá su negocio y un 51% que tendrá que cerrar en un plazo de 2 años
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        Periodo máximo de inactividad que puede soportar una empresa sin poner en peligro su supervivencia es de:
+        <ul>
+            <li>Sector seguros: 5,6 días</li>
+            <li>Sector fabricación:	4,9 días</li>
+            <li>Sector industrial:	4,8 días</li>
+            <li>Sector distribución: 3,3 días</li>
+            <li>Sector financiero:	2,0 días</li>
+</ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+        Terremotos:
+        <ul>
+            <li>Probabilidad según la localización</li>
+            <li>Pequeñas vibraciones pueden estropear maquinaria delicada</li>
+            <li>Obras en el entorno pueden producir vibraciones</li>
+            <li>Soluciones preventivas</li>
+            <li>Soluciones arquitectónicas</li>
+            <li>Emplazamientos adecuados</li>
+            <li>Protecciones del edificio</li>
+</ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+        Fuego:
+        <ul>
+            <li>Una mala instalación eléctrica</li>
+            <li>Descuidos personales como puede ser fumar en sala de ordenadores</li>
+            <li>Vulnerabilidades del sistema ante el humo</li>
+</ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        Fuego (Soluciones preventivas):
+        <ul>
+            <li>Detector humo y calor</li>
+            <li>Materiales ignífugos</li>
+            <li>Almacén de papel separado de máquinas</li>
+            <li>Revisar el estado del falso suelo</li>
+            <li>Extintores revisados</li>
+</ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        Tormentas eléctricas:
+        <ul>
+            <li>Subidas de tensión que afectan a los equipos</li>
+            <li>Soluciones preventivas</li>
+            <li>Limitadores de tensión</li>
+            <li>Estabilizadores de corriente</li>    
+            <li>SAI (Sistema de Alimentación Ininterrumpida)</li>
+</ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        Inundaciones y similares:
+        <ul>
+            <li>Inundaciones por causas propias de la empresa</li>
+            <li>Inundaciones por causas ajenas</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+
+        Inundaciones y similares (Soluciones preventivas):
+        <ul>
+            <li>Instalar sistemas de drenaje de emergencia</li>
+            <li>Concienciación de los empleados</li>
+            <li>Revisar conductos del agua</li>
+            <li>Localización del equipamiento
+            <ul>
+                <li>A nivel general (NO en un sótano al lado de un río)</li>
+                <li>A nivel del edificio (NO en una sala con grifos)</li>
+            </ul></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Desastres naturales)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/server-fregona.jpg" alt="Armario de red en la Escuela, en la misma sala donde los servicios de limpieza limpian las fregonas" width="30%"></p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas (Alteraciones del entorno)</h2>
+
+        <ul>
+            <li>Temperaturas</li>
+            <li>Polvo</li>
+            <li>Insectos</li>
+            <li>Soluciones preventivas
+                <ul>
+                    <li>Sistemas de refrigeración</li>
+                    <li>Limpieza</li>
+                    <li>Cámaras acorazadas</li>
+                    <li>Filtros en los conductos</li>
+                    <li>...</li>
+                </ul>
+            </li>
+</ul>
+    </section>
+
+    <section class="slide">
+        <h2>Amenazas - Acceso a información en soporte físico</h2>
+
+        Cualquier dispositivo por el que se extraiga información confidencial debe encontrarse en un área de seguridad
+        <ul>
+            <li>Nuevos dispositivos</li>
+            <li>Permisos de impresión o extracción de datos sólo a los usuarios que realmente lo necesitan</li>
+            <li>Imprimir sólo en presencia del usuario (tarjetas inteligentes)</li>
+            <li>Revisión de los empleados al abandonar el área de seguridad</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Google Data Center security</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kd33UVZhnAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

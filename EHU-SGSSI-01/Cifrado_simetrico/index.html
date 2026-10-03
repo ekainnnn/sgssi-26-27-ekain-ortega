@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cifrado simétrico</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Cifrado simétrico</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Cifrado simétrico</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado simétrico</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Criptosistemas</h2>
+        <p>Clave privada (simétricos), clave pública (asimétricos)</p>
+        <p>Monoalfabéticos, polialfabéticos</p>
+        <p>Sustitución, transposición</p>
+        <p>Stream ciphers, block ciphers</p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptosistemas de clave privada</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/clave_privada.svg" alt="criptosistema clave privada" width="60%"></p>  
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado césar</h2>
+        <p>Algoritmo de cifrado muy antiguo</p>
+        <p>Sustitución monoalfabética</p>
+        <p>Desplazar cada letra del mensaje un número fijo de posiciones en el alfabeto: N=3, A->C</p>
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado césar</h2>
+        <p><img  src="pictures-sgssi-01/Caesar_cipher_left_shift_of_3.svg" alt="Cifrado césar" width="40%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://commons.wikimedia.org/wiki/File:Caesar_cipher_left_shift_of_3.svg">Wikimedia Commons</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ataques a criptosistemas</h2>
+        <p>Encontrar la clave de cifrado sin conocerla: descifrar texto cifrados</p>
+        <p>Encontrar debilidades en el algoritmo de cifrado para descifrar el texto cifrado sin la clave</p>
+    </section>
+
+    <section class="slide">
+        <h2>Ataques por fuerza bruta</h2>
+            <p>Probar todas las claves posibles hasta encontrar un texto descifrado con sentido</p>
+            <p>Hay que conocer el algoritmo de cifrado y el espacio de claves (¿Espacio de claves César? -Laboratorio-)</p>
+            <p>Coste computacional elevado (¿Computación cuántica?)</p>
+            <p>Reducir el espacio de claves haciendo algunas claves más probables</p>
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado simple por sustitución</h2>
+        <p>Se sustituye cada letra del mensaje original por otra letra de un alfabeto reordenado</p>
+        <p><img  src="pictures-sgssi-01/sustitucion_simple.png" alt="Sustitución simple" width="40%"></p>
+        <p>Monoalfabético</p>
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado simple por sustitución</h2>
+        <p>¿Espacio de claves?</p><!-- 26! -->
+        <p>Reducir el espacio de claves haciendo algunas claves más probables: ataque estadístico mediante análisis de frecuencias</p>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de frecuencias</h2>
+        <p><b>Monoalfabético:</b> un carácter "original" siempre se sustituye por el mismo carácter/es</p>
+        <p>Se sabe cuáles son los caracteres más frecuentes en cada idioma</p>
+        <p>Se sabe las palabras de dos/tres/cuatro caracteres (bigramas, trigramas y tetragramas) más frecuentes en cada idioma</p>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de frecuencias</h2>
+        <p>Se va "probando" y deduciendo</p>
+        <p>Cuanto más largo es el texto cifrado, mejor</p>
+        <p>Hay que saber el idioma del texto original</p>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de frecuencias</h2>
+        <p>Porcentaje de aparición de caracteres en castellano</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Fecuencias.png" alt="Frecuencias" width="20%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de frecuencias</h2>
+        <p>¿Cómo dificultar el ataque por análisis de frecuencias?</p>
+        <p>Evitar la correspondencia 1-1 usando el mismo carácter en más de una ocasión (Sistemas polialfabéticos)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado playfair</h2>
+        <p>Polialfabético</p>
+        <p><a title="Davidtheterp, CC0, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Playfair_Cipher_01_HI_to_BM_(cropped).png"><img width="150" alt="Playfair Cipher 01 HI to BM" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Playfair_Cipher_01_HI_to_BM_%28cropped%29.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled"></a></p>
+        <p>Espacio de claves: 25!</p>
+        <p>Analisis de frecuencias sobre bigramas</p>
+    </section>
+
+
+<section class="slide">
+        <h2>La máquina Enigma</h2>
+        <p>Dispositivo de cifrado electromecánico utilizado principalmente durante la Segunda Guerra Mundial por los alemanes</p>
+        <p>Clave: configuración de los rotores</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Enigma_(crittografia)_-_Museo_scienza_e_tecnologia_Milano.jpg" alt="Enigma" width="20%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>La máquina Enigma</h2>
+        <p>Alan Turing principal criptoanalista: máquina electromecánica diseñada para buscar automáticamente las configuraciones posibles de Enigma (Bomba). Fundamental para ganar la guerra</p>
+        <p>Turing fundamental para informática: maquinas de Turing, algoritmos de computación, inteligencia artificial, ... ???</p>
+        <p>Turing se suicido en 1954, después de ser perseguido por su homosexualidad. Icono Apple, gobierno UK</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptosistemas simétricos modernos</h2>
+        <p>Cifran bits en vez de texto</p>
+        <p><b>Cifrado en flujo (Stream ciphers):</b> cifrar un flujo continuo de bits</p>
+        <p><b>Cifrado en bloque (Block ciphers):</b> dividir el mensaje en bloques del mismo tamaño y aplicar el algoritmo a cada uno</p>  
+    </section>
+
+    <section class="slide">
+        <h2>Stream ciphers</h2>
+        <p>Cifran un flujo  bit a bit</p>
+        <p>Usado para comunicaciones en tiempo real (No se puede esperar a tener el mensaje completo para
+            cifrarlo y transmitirlo)</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Stream ciphers</h2>
+        <p>A partir de la clave, se usa un generador pseudoaleatorio que genera el flujo de clave (de manera determinista, pero parece aleatoria) de igual tamaño que el mensaje</p>
+        <p>La operación XOR entre el bit a cifrar y el flujo de clave genera el criptograma</p>
+    </section>
+
+    <section class="slide">
+        <h2>Stream ciphers</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cifrado-flujo.svg" alt="Cifrado de flujo" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Stream ciphers: XOR</h2>
+        <p>Reversible</p>
+        <p>No pierde información</p>
+        <p>Muy eficiente</p>
+        <p>Clave aleatoria, salida parece aleatoria</p>
+        <p>One time pad irrompible: C = P XOR K (K totalmente aleatoria, tan largo como mensaje, usada una sola vez)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Stream ciphers</h2>
+        <p>No reutilizar la misma clave para cifrar múltiples mensajes</p>
+        <p>Keystream = F(clave, nonce)</p>
+        <ul>
+            <li>Clave: secreta y fija</li>
+            <li>Nonce: público y diferente para cada mensaje</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Stream ciphers: RC4</h2>
+        <p>1995-2015 (TLS/SSL, WEP)</p>
+        <ul>
+            <li><a href="https://www.rc4nomore.com/">https://www.rc4nomore.com/</a></li>
+            <li>Ataque de recuperación de la clave: Fluhrer, S., Mantin, I., & Shamir, A. (2001). Weaknesses in the Key Scheduling Algorithm of RC4</li>
+            <li>Ataque de sesgo estadístico: Paul, G., & Preneel, B. (2004). A New Weakness in the RC4 Keystream Generator and an Approach to Improve the Security of the Cipher</li>
+        </ul>
+    </section>
+
+        <section class="slide">
+        <h2>Stream ciphers: ChaCha20</h2>
+        <p>2008 (IETF, Google, etc.)</p>
+        <p><a href="https://tools.ietf.org/html/rfc7539">https://tools.ietf.org/html/rfc7539</a></p>
+        <p>TLS, OpenSSH, HTTP/3</p>
+
+    </section>
+    
+
+    <section class="slide">
+        <h2>Block ciphers</h2>
+        <p>Partir el mensaje original en bloques de tamaño fijo
+        </p>
+    <p>Cada bloque de mensaje original genera un bloque de
+        mensaje cifrado</p>
+        <p>Se pueden añadir iteraciones, permutaciones y
+            operaciones entre los distintos bloques</p>
+            <p>Propagación de errores (!Stream ciphers)</p>
+            <p>Padding</p>
+        </section>
+
+        <section class="slide">
+            <h2>Block ciphers</h2>
+                <ul>
+                    <li>DES</li>
+                    <li>Triple DES</li>
+                    <li>AES</li>
+                    <li>IDEA</li>
+                </ul>
+        </section>
+
+        <section class="slide">
+            <h2>DES (Data Encryption Standard)</h2>
+                <ul>
+                    <li>1975, Primer estándar</li>
+                    <li>Bloques de 64 bits</li>
+                    <li>Clave de 56 bits (64 - 8 como propuesta de la NSA para asegurarse de que podian romperlo -???-)</li>
+                    <li>Se considera inseguro actualmente: ej. ataque fuerza bruta: Wiener, M. J. (1999). "Efficient DES Key Search". Practical Cryptography for Data Internetworks. Indiana University: Research Institute for Advanced Computer Science. ISBN 0-8186-8828-1.</li>
+                </ul>
+        </section>
+
+
+
+        <section class="slide">
+            <h2>Triple DES</h2>
+            <ul>
+                <li>Concebido como sucesor de DES, todavia en uso pero no recomendado desde 2023 (<a href="https://www.incibe.es/en/incibe-cert/early-warning/vulnerabilities/cve-2016-2183">CVE-2016-2183</a>)</li>
+                <li>Basado en realizar 3 ejecuciones de DES (Cifrar -
+                    Descifrar - Cifrar)</li>
+                <li>Bloques de 64 bits</li>
+                <li>Claves de 168 bits (3*56), clave efectiva 112 bits</li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2>AES (Advanced Encryption Standard)</h2>
+            <ul>
+                <li>Rijndael</li>
+                <li>Estandarizado por el Instituto Nacional de Normas y Tecnología (NIST), EEUU</li>
+                <li>Sustituto de (Triple) DES</li>
+                <li>Muy usado en todo tipo de comunicaciones y transacciones</li>
+                <li>Bloques de 128 bits</li>
+                <li>Claves de 128, 192 o 256 bits</li>
+            
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>IDEA (International Data Encryption Algorithm)</h2>
+                <ul>
+                    <li>Bloques de 64 bits</li>
+                    <li>Clave 128 bits</li>
+                    <li>8 rondas y media</li>
+                    <li>Está considerado seguro (excepto algunas claves
+                        débiles)</li>
+                    <li>Incluído en OpenPGP</li>
+                </ul>
+        </section>
+
+
+
+
+  
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

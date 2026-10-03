@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Introducción al cifrado, esteganografía y algoritmos resumen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Introducción al cifrado, esteganografía y algoritmos resumen</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Introducción al cifrado, esteganografía y algoritmos resumen</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Introducción al cifrado, esteganografía y algoritmos resumen</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Introducción al cifrado, esteganografía y algoritmos resumen</h2>
+        <ul>
+            <li>Introducción al cifrado</li>
+            <li>Esteganografía</li>
+            <li>Algoritmos resumen</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Introducción al cifrado</h2>
+        <p>"cripto": secreto; "graphos": escritura</p>
+        <p>Mecanismo de seguridad muy antiguo</p>
+        <p>Asegura: <b>Confidencialidad</b>, <b>Integridad</b>, <b>Autenticidad</b>, (<b>No repudio</b>)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Introducción al cifrado</h2>
+        <p>Criptoanálisis: técnicas para descifrar mensajes encriptados</p>
+        <p><b>Criptología: Criptografía + Criptoanálisis</b></p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptosistema</h2>
+        <p>Criptosistema: D<sub>K</sub> ( E<sub>K</sub> ( M ) ) = M
+            <ul>
+                <li>M: Conjunto de todos los mensajes sin cifrar</li>
+                <li>C: Conjunto de todos los mensajes encriptados (criptogramas)</li>
+                <li>K: Conjunto de claves posibles</li>
+                <li>E: Algoritmo de encriptación</li>
+                <li>D: Algoritmo de desencriptación</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptosistemas</h2>
+        <b>Simétricos o de clave privada: </b> Una clave para encriptar y desencriptar<br><br>
+        <b>Asimétricos o de clave pública: </b> Una clave para encriptar y otra para desencriptar (Lo que una encripta, la otra lo desencripta)
+
+    </section>
+
+    <section class="slide">
+        <h2>Introducción al cifrado</h2>
+        <p>Criptografía: <b>cifrar</b> la información</p>
+        <p>Esteganografía: <b>ocultar</b> la información</p>
+        <p>Algoritmos hash: <b>resumir</b> la información</p>
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p>"steganos": oculto; "graphos": escritura</p>
+        <p>Ocultar información de forma que no sea “visible” para quien no sepa la clave</p>
+        <p>Sin saber la clave, puede parecer que no hay información oculta</p>
+        <p>Es la técnica precursora de la criptografía</p>   
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía (historia)</h2>
+        <p>Histaiaeo (gobernador de Mileto) buscaba aliados para sublevarse contra el rey persa Dario I (V a.c.)</p>
+        <p>Necesitaba enviar mensajes que nadie detectara
+            <ul>
+                <li>Rapaba el pelo a los mensajeros</li>
+                <li>Les grababa el mensaje en la cabeza</li>
+                <li>Esperaba a que les creciera el pelo, y los mandaba al destino</li>
+                <li>En el destino les volvían a rapar la cabeza y leían el mensaje</li>
+            </ul>
+        </p>   
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía moderna</h2>
+        <p>Insertar información sensible dentro del <b>fichero contenedor</b></p>
+        <p>
+            <ul>
+                <li>Sustitución de bits</li>
+                <li>Inserción de bits al final, después de la marca EOF (End Of File)</li>
+                <li>Creación fichero contenedor "ad-hoc" partiendo de información a ocultar</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Sustitución de bits</h2>
+        <p>Ocultación de información en archivos multimedia (normalmente imágenes)</p>
+        <p>En formato BMP cada pixel en RGB son 3 bytes</p>  
+        <p>LSB (Less Significant Bit): Modificar el último bit de cada byte es inapreciable</p>   
+    </section>
+
+    <section class="slide">
+        <h2>Sustitución de bits</h2>
+        <p>Por ejemplo, para ocultar texto, insertamos el código ASCII del carácter deseado</p>
+        <p><img    src="pictures-sgssi-01/LSB.png" alt="Esteganografía" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía moderna</h2>
+        <ul>
+            <li>Normalmente mediante programas que usan contraseñas</li>
+            <li>¿Cómo mejorar la robustez del sistema?</li>
+            <li class="next">Cifrar la información antes de introducirla (Criptografía + esteganografía)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía moderna: problemas</h2>
+        <ul>
+            <li>Si el fichero contenedor es manipulado se puede perder la información (ej. JPEG ; BMP ; JPEG)</li>
+            <li>No garantiza <b>Autenticidad</b> ni <b>Integridad</b> (Pero si <b>Confidencialidad</b>)</li>
+
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos resumen</h2>
+        <p>Generan un criptograma que representa el contenido original:
+            <ul>
+                <li>De <b>tamaño constante</b>, independientemente del contenido original</li>
+                <li>Representa <b>todo el contenido original</b></li>
+                <li>Si el contenido cambia lo más mínimo <b>cambia completamente</b></li>
+                <li>Para el mismo contenido, siempre genera el <b>mismo</b></li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Funciones hash</h2>
+            <ul>
+                <li>No tienen inversa (one-way function): no se puede obtener el contenido desde el criptograma</li>
+                <li>No se puede descifrar, ya que no cifra (resume)</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Funciones de los algoritmos resumen</h2>
+        <p>Certificar la integridad de la información</p>
+        <p>Almacenar contraseñas</p>
+        <p>Identificador de datos o archivos</p>
+        <p>Prueba de trabajo en Bitcoin</p>
+        <p>Integridad enfirma digital</p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificar la integridad de la información</h2>
+        <p><a href="https://www.eclipse.org/downloads/packages/">https://www.eclipse.org/downloads/packages/</a></p>
+        <p><img src="pictures-sgssi-01/hash-eclipse.png" alt="Hash eclipse" width="40%"></p>
+        <p>¿Cómo verificar la integridad?</p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificar la integridad de la información</h2>
+        <p><img  src="pictures-sgssi-01/hash-integridad.svg" alt="Hash integridad" width="60%"></p>
+        <p style="font-size:10px;font-family: monospace">[sha512sum]</p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas</h2>
+        <p><img    src="pictures-sgssi-01/hash-clave.svg" alt="Hash clave" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: identificación</h2>
+        <p><img    src="pictures-sgssi-01/hash-clave-identificacion.svg" alt="Hash clave identificacion" width="80%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: problemas</h2>
+        <p>Todo el mundo con la misma contraseña tiene el mismo hash</p>
+        <p>Se pueden precalcular los hashes de todo el espacio de contraseñas</p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: problemas</h2>
+        <p>Solución: usar "sal" (Salt), o semilla</p>
+        <p><img    src="pictures-sgssi-01/hash-clave-identificacion-semilla.svg" alt="Hash clave identificacion sal" width="80%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: problemas</h2>
+        <p>Identificación con sal</p>
+        <p><img    src="pictures-sgssi-01/hash-clave-identificacion-sal.svg" alt="Hash clave identificacion sal" width="80%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: problemas</h2>
+        <p>Ventajas del uso de sal:
+            <ul>
+                <li>La misma clave tiene una codificación distinta cada vez</li>
+                <li>Dificulta los ataques por fuerza bruta</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: implementación</h2>
+        <p>Linux:
+            <ul>
+                <li>Ubicación: /etc/shadow</li>
+                <li>Obtención: sudo cat /etc/shadow</li>
+                <li>Formato: user:$Algoritmousado$sal$ResumenCriptográfico:A:B:C:D:E:F:</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: implementación</h2>
+        <p>Formato Linux:
+            <ul>
+                <li>Algoritmousado: 1: MD5; 2: Blowfish; 3: NT; 5: SHA-256; 6: SHA-512</li>
+                <li>Sal: cadena aleatoria para derivar las claves</li>
+            </ul> 
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: implementación</h2>
+        <p>Formato Linux:
+            <ul>
+                <li>A: número de días sin cambiar la clave (desde 01/01/1970)</li>
+                <li>B: número de días hasta poder cambiar la clave</li>
+                <li>C: número máximo de días que se puede estar sin cambiar la clave</li>
+            </ul> 
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar contraseñas: implementación</h2>
+        <p>Formato Linux:
+            <ul>
+                <li>D: número de días de antelación con el que hay que avisar al usuario de que tiene que cambiar la clave</li>
+                <li>E: número de días desde que caduque la contraseña hasta que se desactive la cuenta</li>
+                <li>F: número de días hasta que la cuenta se desactive (desde 01/01/1970)</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>Sistema de control de versiones Git para identificar:
+            <ul>
+                <li>Commits</li>
+                <li>Blobs (Binary Large Objects)</li>
+                <li>Arboles: directorios que referencian a blobs y otros directorios</li>
+            </ul>
+        </p>
+        <p style="font-size:10px;font-family: monospace">[git log]</p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>Sistema de control de versiones Git para:
+            <ul>
+                <li>De-duplicación de contenido</li>
+                <li>Detección de cambios</li>
+                <li>Integridad frente a cambios maliciosos</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>En BitTorrent para:
+            <ul>
+                <li>Identificar archivos en <a href="https://es.wikipedia.org/wiki/Magnet_URI">Magnet links</a>: URNs (URIs) que identifican un recurso por su contenido, no por su localización (No URLs!)</li>
+                <li>Verificar la integridad de los archivos descargados</li>
+                <li>Encontrar peers que tengan los archivos necesarios (<a href="https://es.wikipedia.org/wiki/Distributed_Hash_Table">DHT</a>, Distributed Hash Table)</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>En estructuras de datos de lenguajes de programación para:
+            <ul>
+                <li>Búsqueda rápida</li>
+                <li>Verificación de integridad</li>
+                <li>Control de unicidad</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>En estructuras de datos de lenguajes de programación:
+            <ul>
+                <li>Python: Dicts, Sets</li>
+                <li>Java: HashMap, HashSet</li>
+                <li>JavaScript: Object, Map</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos resumen más conocidos</h2>
+        <p>MD5</p>
+        <p>SHA-3</p>
+        <p>RIPEMD</p>
+    </section>
+
+    <section class="slide">
+        <h2>MD5</h2>
+        <p>Criptográficamente roto pero todavía en uso, sobretodo para integridad y en sistemas heredados no-críticos</p>
+        <p>Hashes de 128 bits</p>
+    </section>
+
+    <section class="slide">
+        <h2>SHA-3</h2>
+        <p>SHA-3 (Secure Hash Algorithm 3) desarrollado por <a href="https://www.nist.gov/">NIST</a> (National Institute for Standards and Technology)</p>
+        <p>SHA-0..2 estaban basados en MD5 (roto), SHA-3 es una estructura diferente</p>
+        <p>Firmas digitales: DSA (Digital Signature Algorithm) y ECDSA (Elliptic Curve Digital Signature Algorithm)</p>
+        <p>Certificados SSL/TLS: <a href="https://www.openssl.org/">Open SSL</a></p>
+        <p>Criptomonedas: <a href="https://ethereum.org/">Ethereum</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>RIPEMD</h2>
+        <p>RIPEMD (RACE Integrity Primitives Evaluation Message Digest): alternativa a SHA y MD5</p>
+        <p>Muy seguro</p>
+        <p>Se usa, en combinación con SHA-256, para crear <a href="https://bitcoinwiki.org/wiki/bitcoin-address">direcciones Bitcoin</a> a partir de claves públicas</p>
+    </section>
+
+    <section class="slide">
+        <h2>Ataques a algoritmos resumen</h2>
+                <ul>
+                    <li>Colisiones: dos conjuntos de datos diferentes generan el mismo resumen</li>
+                    <li>Mediante fuerza bruta (ej. <a href="https://es.wikipedia.org/wiki/Paradoja_del_cumplea%C3%B1os">paradoja del cumpleaños</a>) o técnicas mas refinadas como <a href="https://shattered.io/">shattered</a> contra SHA1</li>
+                    <li>Integridad: sustituir un documento por otro documento malicioso con el mismo hash</li>
+                    <li>Certificados TLS/SSL: suplantar identidad de un servicio creando un certificado falso</li>
+                </ul>
+            
+    </section>
+
+        <section class="slide">
+        <h2>Checksums</h2>
+        <p>Un checksum es un resumen corto de un fichero o bloque de datos</p>
+        <ul>
+            <li>Se usa para detectar errores accidentales</li>
+            <li>Muy útil en transferencia, descarga o validación de archivos</li>
+            <li>Ejemplos: CRC32</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Checksums y hashes</h2>
+        <p>Ambos generan una salida de tamaño fijo, pero no tienen el mismo objetivo</p>
+        <ul>
+            <li><b>Checksum</b>: detectar corrupción accidental o cambios involuntarios</li>
+            <li><b>Hash criptográfico</b>: asegurar integridad frente a un atacante</li>
+            <li>Los checksums no están diseñados para resistir colisiones ni ataques dirigidos</li>
+            <li>Los checksums se computan de forma sencilla y rápida</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Error Correcting Codes (ECC)</h2>
+        <p>No son hashes ni checksums</p>
+        <ul>
+            <li>Se usan para detectar y, en muchos casos, corregir errores de transmisión</li>
+            <li>Ejemplos: parity bits, Hamming, Reed-Solomon</li>
+            <li>Su objetivo es reconstruir datos dañados por ruido o interferencias</li>
+            <li>Los hashes buscan identificar cambios; los ECC buscan recuperar información corrupta</li>
+
+        </ul>
+    </section>
+
+        <section class="slide">
+        <h2>Error Correcting Codes (ECC)</h2>
+        <p>No son hashes ni checksums</p>
+        <ul>
+            <li>Necesitan más recursos computacionales que los hashes o checksums</li>
+            <li>Incluyen información de redundancia para la corrección de errores</li>
+            <li>Transmision en medios de comunicación inestables</li>
+        </ul>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

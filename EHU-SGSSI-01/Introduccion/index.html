@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Introducción a la seguridad informática</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Introducción a la seguridad informática</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Introducción a la seguridad informática</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section> 
+
+    <section class="slide">
+        <h2>Introducción a la seguridad informática</h2>
+        <p><a href="https://zenodo.org/badge/latestdoi/368886477"><img src="https://zenodo.org/badge/368886477.svg" alt="DOI"></a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Introducción a la seguridad informática</h2>
+        <ul>
+            <li>¿Qué es la seguridad informática?</li>
+            <li>Análisis de riesgos</li>
+            <li>Responsables</li>
+            <li>Principios de seguridad</li>
+            <li>Ejemplos</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la seguridad informática?</h2>
+        <p>Bienes / activos: aquello que se desea proteger (Datos, software, hardware, infraestructura, personal, información, etc.)</p>
+        <p>Riesgos / amenazas: posibilidad de que algún bien sufra daños o desaparezca (Robo, modificación, suplantación, interceptación, etc.)</p>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la seguridad informática?</h2>
+        <p>Todas las acciones que se toman para asegurar que:
+            <ul>
+                <li>Los bienes / servicios son usados como se debe</li>
+                <li>Los bienes / servicios sólo dan acceso a quien tiene permiso para ello</li>
+                <li>Los bienes / servicios cumplen la legislación vigente</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de riesgos</h2>
+        <p>Es imposible lograr el 100% de seguridad: la seguridad es un proceso, no un estado
+        </p>
+        <p><img src="pictures-sgssi-01/sgssi-proceso.png" alt="La seguridad es un proceso" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de riesgos</h2>
+        <p>Identificar los bienes a proteger</p>
+        <p>Estimar el valor (V) de esos bienes</p>
+        <p>Identificar las amenazas que sufren dichos bienes</p>
+        <p>Estimar la probabilidad (P) de que esas amenazas realmente se produzcan</p>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de riesgos</h2>
+        <p>Analizar las medidas necesarias para eliminar esas amenazas</p>
+        <p>Estimar el coste (C) de implantar esas medidas</p>
+        <p>C &#60; P * V (Cuando el coste es menor que la probabilidad multiplicada por el valor, aplicar las medidas)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Responsables</h2>
+        <p>
+            <ul>
+                <li>Administración de seguridad</li>
+                <li>Dirección</li>
+                <li>Usuarios</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Responsables</h2>
+        <p>Administración de seguridad:
+            <ul>
+                <li>Responsable de identificar bienes a proteger y riesgos</li>
+                <li>Realiza el plan de seguridad y lo implementa</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Responsables</h2>
+        <p>Dirección:
+            <ul>
+                <li>La seguridad debe ser un objetivo estratégico</li>
+                <li>Hay que invertir dinero</li>
+                <li>Organizar el departamento de seguridad</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Responsables</h2>
+        <p>Usuarios:
+            <ul>
+                <li>Deben recibir formación</li>
+                <li>Deben conocer la política de seguridad de la empresa</li>
+                <li>Deben involucrarse en la seguridad</li>
+                <li>Deben conocer la legislación</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Principios de seguridad</h2>
+        <ul>
+            <li><b>C</b>onfidencialidad</li>
+            <li><b>I</b>ntegridad</li>
+            <li><b>D</b>isponibilidad</li>
+            <li><b>A</b>utenticidad</li>
+            <li><b>N</b>o repudio</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Confidencialidad</h2>
+        <p>Se garantiza que la información transmitida o almacenada en un sistema informático sólo podrá ser leída por su legítimo destinatario</p>
+        <p>Si dicha información cae en manos de terceras personas no podrán acceder al contenido original</p>
+    </section>
+
+    <section class="slide">
+        <h2>Integridad</h2>
+        <p>Se garantiza que la información no ha sido modificada desde su creación o durante su transmisión</p>
+        <p>Permite detectar si se ha añadido, modificado o eliminado parte de la información almacenada, procesada o transmitida</p>
+        <p style="text-align:right;font-size:50%;"><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01/blob/main/Introduccion/index.html.md5sum">EHU-SGSSI-01/Introduccion</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Disponibilidad</h2>
+        <p>La información debe estar disponible para sus legítimos usuarios y propietarios</p>
+        <p>Se garantiza el correcto funcionamiento del sistema informático mediante un diseño suficientemente robusto frente a ataques e interferencias</p>
+        <p style="text-align:right;font-size:50%;">(EHU NMap Mac Spoofing)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Autenticación</h2>
+        <p>Se puede comprobar la identidad del usuario que crea o accede a la información</p>
+        <p>También se habla de autenticación de un equipo que se conecta a una red o intenta acceder a un servicio</p>
+    </section>
+
+    <section class="slide">
+        <h2>No repudio</h2>
+        <p>Se demuestra la autoría de la información mediante un mecanismo probatorio que impida al usuario que la ha creado y enviado negar esta circunstancia</p>
+        <p>Se aplica la misma situación al destinatario de la información</p>
+        <p>Especialmente importante en transacciones comerciales</p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img style="border: 1px solid #555;" src="pictures-sgssi-01/wannacry-1.png" alt="Wannacry" width="30%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://teknoplof.com/2026/06/02/iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea-com-cuando-un-dominio-de-10-dolares-freno-una-pandemia-digital/">https://teknoplof.com/2026/06/02/iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea-com-cuando-un-dominio-de-10-dolares-freno-una-pandemia-digital/</a></p>
+        <p>iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/eurohelp.png" alt="eurohelp" width="30%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/miau.png" alt="miau" width="30%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.genbeta.com/seguridad/ciberatacante-destruye-miles-bases-datos-mongodb-elasticsearch-deja-solo-firma-miau">https://www.genbeta.com/seguridad/ciberatacante-destruye-miles-bases-datos-mongodb-elasticsearch-deja-solo-firma-miau</a></p>
+        <p><img src="pictures-sgssi-01/eurohelp.png" alt="eurohelp" width="30%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/mapfre.png" alt="mapfre" width="30%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://derechodelared.com/mapfre-victima-de-un-ataque-de-ransomware/">https://derechodelared.com/mapfre-victima-de-un-ataque-de-ransomware/</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/florida.png" alt="florida" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://news.sophos.com/es-es/2019/06/24/una-ciudad-de-florida-pagara-mas-de-600-000-por-un-rescate-de-ransomware/">https://news.sophos.com/es-es/2019/06/24/una-ciudad-de-florida-pagara-mas-de-600-000-por-un-rescate-de-ransomware/</a></p>
+    </section>
+    
+        <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/ransomware-cafe.png" alt="ransomware cafetera" width="40%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://computerhoy.com/noticias/tecnologia/ransomware-maquinas-cafe-cafetera-726041">https://computerhoy.com/noticias/tecnologia/ransomware-maquinas-cafe-cafetera-726041</a></p>
+    </section>
+    
+        <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/navarra.png" alt="navarra" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.genbeta.com/actualidad/ayuntamientos-navarros-llevan-13-dias-caidos-ransomware-ha-dejado-a-toda-administracion-como-hace-20-anos">https://www.genbeta.com/actualidad/ayuntamientos-navarros-llevan-13-dias-caidos-ransomware-ha-dejado-a-toda-administracion-como-hace-20-anos</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/merkel.png" alt="merkel" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.abc.es/internacional/20150614/abci-ordenador-merkel-ciberataque-201506141013.html">https://www.abc.es/internacional/20150614/abci-ordenador-merkel-ciberataque-201506141013.html</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/nsa.png" alt="nsa" width="50%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.eldiario.es/turing/vigilancia_y_privacidad/nsa-programas-vigilancia-desvelados-snowden_1_4974573.html">https://www.eldiario.es/turing/vigilancia_y_privacidad/nsa-programas-vigilancia-desvelados-snowden_1_4974573.html</a></p>
+        <p style="text-align:right;font-size:50%;">Vigilancia permanente. Edward Snowden. Grupo Planeta, 2019</p>
+        <p style="text-align:right;font-size:50%;">"Quien renuncia a su libertad por seguridad, no merece ni libertad ni seguridad" B. Franklin</p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/sabotaje.png" alt="sabotaje" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.antena3.com/noticias/economia/hackeo-web-banco-espana-deja-practicamente-inoperativa_201808275b8427f90cf26ed5cf1aaf4e.html">https://www.antena3.com/noticias/economia/hackeo-web-banco-espana-deja-practicamente-inoperativa_201808275b8427f90cf26ed5cf1aaf4e.html</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/anonymous.png" alt="anonymous" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.lasexta.com/noticias/nacional/hackean-la-pagina-web-del-congreso-de-los-diputados-para-rodearlo_201610295814e4680cf24962cc0c6aba.html">https://www.lasexta.com/noticias/nacional/hackean-la-pagina-web-del-congreso-de-los-diputados-para-rodearlo_201610295814e4680cf24962cc0c6aba.html</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/avalmadrid.png" alt="anonymous" width="40%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://la9deanon.tumblr.com/post/625357883903754240/half-track-en-avalmadrid">https://la9deanon.tumblr.com/post/625357883903754240/half-track-en-avalmadrid</a></p>
+    </section>
+
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/lexnet.png" alt="lexnet" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.elconfidencial.com/tecnologia/2017-07-27/lexnet-justicia-sistema-telematico_1421771/">https://www.elconfidencial.com/tecnologia/2017-07-27/lexnet-justicia-sistema-telematico_1421771/</a></p>
+        <p style="text-align:right;font-size:50%;">(EHU GAUR guías docentes)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/salud.png" alt="salud" width="40%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.diariodenavarra.es/noticias/navarra/mas_navarra/salud_debe_pagar_125_000_euros_por_acceso_ilegitimo_historial_una_paciente_70815_2061.html">https://www.diariodenavarra.es/noticias/navarra/mas_navarra/salud_debe_pagar_125_000_euros_por_acceso_ilegitimo_historial_una_paciente_70815_2061.html</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/deepfake.png" alt="deepfake" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.tekcrispy.com/2019/07/22/deepfakes-audio-empresas/">https://www.tekcrispy.com/2019/07/22/deepfakes-audio-empresas/</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/tesla.png" alt="tesla" width="40%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.businessinsider.es/consiguen-abrir-arrancar-tesla-model-3-traves-movil-dueno-1062031">https://www.businessinsider.es/consiguen-abrir-arrancar-tesla-model-3-traves-movil-dueno-1062031</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/log4shell.png" alt="log4j" width="40%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.xataka.com/seguridad/log4shell-vulnerabilidad-critica-proporciones-catastroficas-que-amenaza-destrozar-internet">https://www.xataka.com/seguridad/log4shell-vulnerabilidad-critica-proporciones-catastroficas-que-amenaza-destrozar-internet</a></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/doki.png" alt="doki" width="40%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://unaaldia.hispasec.com/2020/07/doki-el-nuevo-malware-de-linux-fija-como-objetivo-las-apis-de-contenedores-docker-mal-configurados.html">https://unaaldia.hispasec.com/2020/07/doki-el-nuevo-malware-de-linux-fija-como-objetivo-las-apis-de-contenedores-docker-mal-configurados.html</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/llamada_microsoft.png" alt="llamada microsoft" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.eldiario.es/consumoclaro/consumo-digital/vuelve-timo-llamada-microsoft_1_1558088.html">https://www.eldiario.es/consumoclaro/consumo-digital/vuelve-timo-llamada-microsoft_1_1558088.html</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hotel_qwerty.png" alt="Hotel QWERTY" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.genbeta.com/seguridad/uno-mayores-grupos-hoteleros-mundo-hackeado-usar-qwerty1234-como-contrasena-su-boveda-contrasenas">https://www.genbeta.com/seguridad/uno-mayores-grupos-hoteleros-mundo-hackeado-usar-qwerty1234-como-contrasena-su-boveda-contrasenas</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/last-of-us.png" alt="The last of us" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.kaspersky.es/about/press-releases/2023_los-ciberdelincuentes-usan-la-serie-the-last-of-us-para-vaciar-cuentas-bancarias">https://www.kaspersky.es/about/press-releases/2023_los-ciberdelincuentes-usan-la-serie-the-last-of-us-para-vaciar-cuentas-bancarias</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplos</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/polyfill.png" alt="Polyfill" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://sansec.io/research/polyfill-supply-chain-attack">https://sansec.io/research/polyfill-supply-chain-attack</a></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01/blob/8cc276c9ef19b9e3b6b207e8e316041dac9111db/Introduccion/index.html#L13">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01/blob/8cc276c9ef19b9e3b6b207e8e316041dac9111db/Introduccion/index.html#L13</a> PULL REQUEST</p>
+    </section>
+
+    
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
